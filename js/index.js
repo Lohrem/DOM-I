@@ -85,3 +85,21 @@ let mainContentText = document.querySelectorAll(".text-content p")
 mainContentText.forEach((text, index) => {
   text.innerHTML = mainContentTextArray[index]
 })
+
+//------ Contact
+let contactHeading = document.querySelector(".contact h4")
+contactHeading.innerHTML = siteContent.contact["contact-h4"]
+
+let contactAddressArray = [
+  siteContent.contact.address,
+  siteContent.contact.phone,
+  siteContent.contact.email
+]
+let contactAdressText = document.querySelectorAll(".contact p")
+contactAdressText.forEach((p, index) => {
+  p.innerHTML = contactAddressArray[index]
+})
+
+//------ Footer
+let footerText = document.querySelector("footer p")
+footerText.innerHTML = siteContent.footer.copyright
