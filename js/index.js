@@ -54,7 +54,22 @@ let navLinks = document.querySelectorAll("nav a")
 navLinks.forEach((link, index) => {
   link.innerHTML = siteContent["nav"][`nav-item-` + (index + 1)]
 })
+let nav = document.querySelector("nav");
 
+let anchorTag = document.createElement("a")
+anchorTag.text = "Appended child"
+nav.appendChild(anchorTag);
+Array.from(navLinks).push(anchorTag)
+
+let preAnchorTag = document.createElement('a')
+preAnchorTag.text = "Prepended child"
+nav.prepend(preAnchorTag);
+Array.from(navLinks).push(preAnchorTag)
+
+let links = document.querySelectorAll("nav a")
+links.forEach((l, i) => {
+  l.style.color = "green"
+})
 //------ CTA
 let ctaText = document.querySelector(".cta-text h1")
 ctaText.innerHTML = siteContent["cta"]["h1"]
